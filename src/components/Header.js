@@ -1,22 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import BeerLogo from '../assets/beer.svg';
 import SearchIcon from '../assets/search.svg';
 
-const Header = () => {
-  const [text] = useState(null);
+const Header = () => (
+  <header className="header">
+    <div className="icon">
+      <img src={BeerLogo} alt="music-disc" />
+      <h3>Ale-o</h3>
+    </div>
 
-  return (
-    <header className="header">
-      <div className="icon">
-        <img src={BeerLogo} alt="music-disc" />
-        <h3>Ale-o</h3>
-      </div>
-
-      <input type="text" value={text} placeholder="Search" />
-
-      <img src={SearchIcon} alt="search-icon" className="search" />
-    </header>
-  );
-};
+    <img src={SearchIcon} alt="search-icon" className="search" />
+  </header>
+);
 
 export default Header;

@@ -1,6 +1,7 @@
 const actions = {
   ADD_BEERS: 'ADD_BEERS',
   ADD_CATEGORIES: 'ADD_CATEGORIES',
+  TOGGLE_SPINNER: 'TOGGLE_SPINNER',
 };
 
 const addBeers = beers => ({
@@ -13,4 +14,10 @@ const addCategories = categories => ({
   payload: categories,
 });
 
-export default { actions, addBeers, addCategories };
+const toggleSpinner = () => ({
+  type: actions.TOGGLE_SPINNER,
+});
+
+export default {
+  actions, addBeers, addCategories, toggleSpinner,
+};
