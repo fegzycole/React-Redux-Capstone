@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import DiscLogo from '../assets/disc.png';
+import BeerLogo from '../assets/beer.svg';
 import SearchIcon from '../assets/search.png';
 
 const Header = () => {
@@ -8,8 +8,8 @@ const Header = () => {
   return (
     <header className="header">
       <div className="icon">
-        <img src={DiscLogo} alt="music-disc" />
-        <h3>Songify</h3>
+        <img src={BeerLogo} alt="music-disc" />
+        <h3>Ale-o</h3>
       </div>
 
       <input type="text" value={text} placeholder="Search" />
