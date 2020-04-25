@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import BeerLogo from '../assets/beer.svg';
-import SearchIcon from '../assets/search.png';
+import SearchIcon from '../assets/search.svg';
 
 const Header = () => {
   const [text] = useState(null);
@@ -14,7 +14,7 @@ const Header = () => {
 
       <input type="text" value={text} placeholder="Search" />
 
-      <img src={SearchIcon} alt="search-icon" />
+      <img src={SearchIcon} alt="search-icon" className="search" />
     </header>
   );
 };

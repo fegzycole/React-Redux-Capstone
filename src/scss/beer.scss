@@ -1,0 +1,52 @@
+.Beer {
+  width: 80%;
+  background-color: #fff;
+  padding: 7px;
+  height: inherit;
+  margin: 0 auto 50px auto;
+  cursor: pointer;
+  border-radius: 5px;
+
+  img {
+    width: 80%;
+    margin: 0 auto;
+    height: 220px;
+  }
+
+  .beer-content {
+    color: #000;
+    h4 {
+      padding: 5px;
+    }
+  }
+}
+
+@media screen and (min-width: 570px) {
+  .Beer-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .Beer {
+      width: 45%;
+
+      img {
+        width: 100%;
+        height: 250px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .Beer-list {
+    .Beer {
+      width: 30%;
+
+      img {
+        width: 100%;
+        height: 270px;
+      }
+    }
+  }
+}

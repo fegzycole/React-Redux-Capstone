@@ -3,19 +3,19 @@ import PropTypes from 'prop-types';
 import BeerBrand from '../assets/beer.png';
 
 const Beer = ({ beer }) => {
-  const { description, name } = beer;
+  const { name } = beer;
 
-  const style = {
-    background: `url(${
-      Object.prototype.hasOwnProperty.call(beer, 'labels') ? beer.labels.small : BeerBrand
-    })`,
-  };
+  const imageUrl = Object.prototype.hasOwnProperty.call(beer, 'labels')
+    ? beer.labels.large
+    : BeerBrand;
 
   return (
-    <div className="Beer" style={style}>
-      <div className="beer-group">
+    <div className="Beer">
+      <div className="img-container">
+        <img src={imageUrl} alt={name} />
+      </div>
+      <div className="beer-content">
         <h4>{name}</h4>
-        <p>{description}</p>
       </div>
     </div>
   );
