@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import BeerBrand from '../assets/beer.png';
 
 const Beer = ({ beer }) => {
-  const { label: { large }, description, name } = beer;
+  const { description, name } = beer;
 
   const style = {
-    background: `url(${large || BeerBrand}) no-repeat center center fixed`,
+    background: `url(${
+      Object.prototype.hasOwnProperty.call(beer, 'labels') ? beer.labels.small : BeerBrand
+    })`,
   };
 
   return (
