@@ -1,10 +1,16 @@
 const actions = {
   ADD_BEERS: 'ADD_BEERS',
+  ADD_CATEGORIES: 'ADD_CATEGORIES',
 };
 
-const addBeers = book => ({
+const addBeers = beers => ({
   type: actions.ADD_BEERS,
-  payload: book,
+  payload: beers,
 });
 
-export default { actions, addBeers };
+const addCategories = categories => ({
+  type: actions.ADD_CATEGORIES,
+  payload: categories,
+});
+
+export default { actions, addBeers, addCategories };
