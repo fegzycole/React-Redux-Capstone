@@ -1,9 +1,13 @@
 import axios from 'axios';
 
-const { REACT_APP_BASE_URL } = process.env;
+const { REACT_APP_MEAL_URL, REACT_APP_CATEGORY_URL } = process.env;
 
-const query = axios.create({
-  baseURL: REACT_APP_BASE_URL,
+const mealQuery = axios.create({
+  baseURL: REACT_APP_MEAL_URL,
 });
 
-export default query;
+const categoryQuery = axios.create({
+  baseURL: REACT_APP_CATEGORY_URL,
+});
+
+export default { mealQuery, categoryQuery };

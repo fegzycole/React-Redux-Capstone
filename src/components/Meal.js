@@ -1,39 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
-import BeerBrand from '../assets/beer.png';
 
 const Beer = props => {
-  const { beer } = props;
+  const { meal } = props;
 
-  const { name } = beer;
+  const { strMeal, strMealThumb } = meal;
 
-  const imageUrl = Object.prototype.hasOwnProperty.call(beer, 'labels')
-    ? beer.labels.large
-    : BeerBrand;
-
-  const showBeerPage = ({ id }) => props.history.push(`/${id}`);
+  const showBeerPage = ({ idMeal }) => props.history.push(`/${idMeal}`);
 
   return (
     <div
       className="Beer"
-      onClick={() => showBeerPage(beer)}
-      onKeyPress={() => showBeerPage(beer)}
+      onClick={() => showBeerPage(meal)}
+      onKeyPress={() => showBeerPage(meal)}
       role="button"
       tabIndex="0"
     >
       <div className="img-container">
-        <img src={imageUrl} alt={name} />
+        <img src={strMealThumb} alt={strMeal} />
       </div>
       <div className="beer-content">
-        <h4>{name}</h4>
+        <h4>{strMeal}</h4>
       </div>
     </div>
   );
 };
 
 Beer.propTypes = {
-  beer: PropTypes.instanceOf(Object).isRequired,
+  meal: PropTypes.instanceOf(Object).isRequired,
   history: PropTypes.func,
 };
 

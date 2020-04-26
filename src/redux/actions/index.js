@@ -1,12 +1,13 @@
 const actions = {
-  ADD_BEERS: 'ADD_BEERS',
+  ADD_MEALS: 'ADD_MEALS',
   ADD_CATEGORIES: 'ADD_CATEGORIES',
   TOGGLE_SPINNER: 'TOGGLE_SPINNER',
+  CHANGE_FILTER: 'CHANGE_FILTER',
 };
 
-const addBeers = beers => ({
-  type: actions.ADD_BEERS,
-  payload: beers,
+const addMeals = meals => ({
+  type: actions.ADD_MEALS,
+  payload: meals,
 });
 
 const addCategories = categories => ({
@@ -18,6 +19,11 @@ const toggleSpinner = () => ({
   type: actions.TOGGLE_SPINNER,
 });
 
+const changeFilter = filter => ({
+  type: actions.CHANGE_FILTER,
+  payload: filter,
+});
+
 export default {
-  actions, addBeers, addCategories, toggleSpinner,
+  actions, addMeals, addCategories, toggleSpinner, changeFilter,
 };
