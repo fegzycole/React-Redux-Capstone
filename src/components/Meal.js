@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
+import mealStyles from '../scss/meal.module.scss';
 
 const Beer = props => {
   const { meal } = props;
@@ -11,16 +12,16 @@ const Beer = props => {
 
   return (
     <div
-      className="Beer"
+      className={mealStyles.meal}
       onClick={() => showBeerPage(meal)}
       onKeyPress={() => showBeerPage(meal)}
       role="button"
       tabIndex="0"
     >
-      <div className="img-container">
+      <div className={mealStyles.imgContainer}>
         <img src={strMealThumb} alt={strMeal} />
       </div>
-      <div className="beer-content">
+      <div className={mealStyles.beerContent}>
         <h4>{strMeal}</h4>
       </div>
     </div>

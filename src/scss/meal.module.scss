@@ -1,0 +1,152 @@
+.meal {
+  width: 80%;
+  background-color: rgb(65, 62, 62);
+  color: #fff;
+  padding: 7px;
+  height: inherit;
+  margin: 0 auto 50px auto;
+  cursor: pointer;
+  border-radius: 5px;
+
+  img {
+    width: 80%;
+    margin: 0 auto;
+    height: 220px;
+  }
+}
+
+.sampleMeal {
+  width: 350px;
+  margin: 50px auto;
+
+  .mealDescription {
+    width: 100%;
+    text-align: center;
+  
+    img {
+      width: 100%;
+    }
+  
+    p {
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .mealContent {
+      color: #000;
+      margin-top: 20px;
+      h4 {
+        padding: 5px;
+        font-family: 'Poppins', sans-serif;
+        text-transform: uppercase;
+        font-size: 20px;
+        color: #fff;
+      }
+  
+      width: 350px;
+  
+      div {
+        width: 100% !important;
+        height: 290px !important;
+      }
+    }
+  }
+
+  button {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (min-width: 570px) {
+  .mealList {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .meal {
+    width: 45%;
+
+    img {
+      width: 100%;
+      height: 250px;
+    }
+  }
+}
+
+.notFound {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%,-50%);
+  width: 350px;
+
+  h2 {
+    font-size: 60px;
+    color: #fff;
+  }
+
+  p {
+    font-size: 30px;
+    color: #fff;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .meal {
+    width: 30%;
+
+    img {
+      width: 100%;
+      height: 270px;
+    }
+  }
+}
+
+@media screen and (min-width: 860px) {
+  .notFound {
+    h2 {
+      font-size: 120px;
+      color: #fff;
+    }
+  
+    p {
+      font-size: 50px;
+      color: #fff;
+    }
+  }
+
+  .sampleMeal {
+    width: 850px;
+    height: 500px;
+
+    .mealDescription {
+      display: flex;
+      justify-content: space-between;
+      text-align: right;
+  
+  
+      img {
+        width: 360px;
+      }
+  
+      .mealContent {
+        text-align: left;
+        width: 450px;
+        margin-top: 0;
+  
+        h4 {
+          font-size: 20px;
+        }  
+  
+        div {
+          width: 450px !important;
+          height: 321px !important;
+        }
+      }
+    }
+  }
+}

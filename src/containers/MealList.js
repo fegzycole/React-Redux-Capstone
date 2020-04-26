@@ -6,6 +6,7 @@ import reduxActions from '../redux/actions/index';
 import Meal from '../components/Meal';
 import Spinner from '../components/Spinner';
 import CategoryFilter from '../components/CategoryFilter';
+import mealList from '../scss/mealList.module.scss';
 
 const { mealQuery, categoryQuery } = axios;
 
@@ -79,14 +80,14 @@ const MealList = ({
     : mealReducer.filter(meal => meal.strCategory === filterReducer);
 
   const showMeals = !spinnerReducer ? (
-    <div className="Beer-list-container">
+    <div className={mealList.mealListContainer}>
       <CategoryFilter
         filter={filterReducer}
         categories={categoryReducer}
         changeFilter={changeFilter}
       />
 
-      <div className="Beer-list">
+      <div className={mealList.mealList}>
         {mealsFilter.map(meal => (
           <Meal key={meal.idMeal} meal={meal} />
         ))}

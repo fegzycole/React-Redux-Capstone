@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import ReactPlayer from 'react-player';
 import { withRouter } from 'react-router';
 import NotFound from '../components/404';
-
+import RedirectButton from '../components/RedirectButton';
+import meal from '../scss/meal.module.scss';
 
 const Beer = ({ mealReducer, match, history }) => {
   const { params: { id } } = match;
@@ -14,17 +15,18 @@ const Beer = ({ mealReducer, match, history }) => {
   const sampleMeal = mealReducer.find(beer => beer.idMeal === id);
 
   const showBeer = sampleMeal ? (
-    <div className="sample-beer">
-      <div className="Beer-description">
-        <div className="img-container">
+    <div className={meal.sampleMeal}>
+      <div className={meal.mealDescription}>
+        <div>
           <img src={sampleMeal.strMealThumb} alt={sampleMeal.strMeal} />
         </div>
-        <div className="beer-content">
+        <div className={meal.mealContent}>
           <h4>{sampleMeal.strMeal}</h4>
 
           <ReactPlayer url={sampleMeal.strYoutube} />
         </div>
       </div>
+      <RedirectButton handleClick={showMealsPage} />
     </div>
   ) : (
     <NotFound showMealsPage={showMealsPage} />

@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import RedirectButton from './RedirectButton';
+import meal from '../scss/meal.module.scss';
 
 const NotFound = ({ showMealsPage }) => (
-  <div className="not-found">
+  <div className={meal.notFound}>
     <h2>404</h2>
     <p>Meal Not Found</p>
     <RedirectButton handleClick={showMealsPage} />
