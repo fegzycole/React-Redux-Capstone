@@ -6,11 +6,13 @@ import { withRouter } from 'react-router';
 import NotFound from '../components/404';
 import RedirectButton from '../components/RedirectButton';
 import meal from '../scss/meal.module.scss';
+import helper from '../helpers/index';
 
-const Beer = ({ mealReducer, match, history }) => {
+const { showMealsPage } = helper;
+
+const Beer = props => {
+  const { mealReducer, match } = props;
   const { params: { id } } = match;
-
-  const showMealsPage = () => history.push('/');
 
   const sampleMeal = mealReducer.find(beer => beer.idMeal === id);
 
@@ -26,10 +28,10 @@ const Beer = ({ mealReducer, match, history }) => {
           <ReactPlayer url={sampleMeal.strYoutube} />
         </div>
       </div>
-      <RedirectButton handleClick={showMealsPage} />
+      <RedirectButton handleClick={() => showMealsPage(props)} />
     </div>
   ) : (
-    <NotFound showMealsPage={showMealsPage} />
+    <NotFound showMealsPage={() => showMealsPage(props)} />
   );
 
   return showBeer;

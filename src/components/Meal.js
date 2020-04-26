@@ -8,13 +8,13 @@ const Beer = props => {
 
   const { strMeal, strMealThumb } = meal;
 
-  const showBeerPage = ({ idMeal }) => props.history.push(`/${idMeal}`);
+  const showMealPage = ({ idMeal }) => props.history.push(`/${idMeal}`);
 
   return (
     <div
       className={mealStyles.meal}
-      onClick={() => showBeerPage(meal)}
-      onKeyPress={() => showBeerPage(meal)}
+      onClick={() => showMealPage(meal)}
+      onKeyPress={() => showMealPage(meal)}
       role="button"
       tabIndex="0"
     >
