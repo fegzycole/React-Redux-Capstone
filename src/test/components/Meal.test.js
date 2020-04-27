@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Meal from '../../components/Meal';
-import findByTestClassName from '../helper/index';
+import { findByTestAttribute } from '../helper/index';
 
 const meal = {
   strMeal: 'Apple Frangipan Tart',
@@ -25,7 +25,7 @@ describe('Meal Component', () => {
   });
 
   it('should render without errors', () => {
-    const element = findByTestClassName(component, '.meal');
+    const element = findByTestAttribute(component, '.meal');
     expect(element.length).toBe(1);
     expect(component.find('img').props().src).toBe(meal.strMealThumb);
     expect(component.find('h4').text()).toBe(meal.strMeal);

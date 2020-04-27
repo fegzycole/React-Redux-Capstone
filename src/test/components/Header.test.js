@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Header from '../../components/Header';
-import findByTestClassName from '../helper/index';
+import { findByTestAttribute } from '../helper/index';
 
 const setup = () => {
   const component = shallow(<Header.WrappedComponent />);
@@ -16,12 +16,12 @@ describe('Header Component', () => {
   });
 
   it('should render without errors', () => {
-    const wrapper = findByTestClassName(component, '.header');
+    const wrapper = findByTestAttribute(component, '.header');
     expect(wrapper.length).toBe(1);
   });
 
   it('should render a logo', () => {
-    const logo = findByTestClassName(component, '.icon');
+    const logo = findByTestAttribute(component, '.icon');
     expect(logo.length).toBe(1);
   });
 });

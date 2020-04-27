@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import RedirectButton from '../../components/RedirectButton';
-import findByTestClassName from '../helper/index';
+import { findByTestAttribute } from '../helper/index';
 
 const setup = () => {
   const component = shallow(<RedirectButton />);
@@ -16,7 +16,7 @@ describe('Redirect Button Component', () => {
   });
 
   it('should render without errors', () => {
-    const element = findByTestClassName(component, '.button');
+    const element = findByTestAttribute(component, '.button');
     expect(element.length).toBe(1);
   });
 });

@@ -1,17 +1,28 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
-// import configureStore from 'redux-mock-store';
-
 import NotFound from '../../components/404';
+import { findByTestAttribute } from '../helper/index';
 
-describe('<NotFound />', () => {
-  describe('render()', () => {
-    test('renders the component', () => {
-      const wrapper = shallow(<NotFound />);
-      const component = wrapper.dive();
+const setup = (props = {}) => {
+  const component = shallow(
+    <NotFound showMealsPage={props.showMealsPage} />,
+  );
+  return component;
+};
 
-      expect(toJson(component)).toMatchSnapshot();
-    });
+describe('CategoryFilter Component', () => {
+  let component;
+
+  const props = {
+    showMealsPage: () => null,
+  };
+
+  beforeEach(() => {
+    component = setup(props);
+  });
+
+  it('should render without errors', () => {
+    const wrapper = findByTestAttribute(component, '.notFound');
+    expect(wrapper.length).toBe(1);
   });
 });
