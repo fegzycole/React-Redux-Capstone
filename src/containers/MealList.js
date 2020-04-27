@@ -24,6 +24,7 @@ const MealList = props => {
 
   useEffect(() => {
     initialize(props);
+    // eslint-disable-next-line
   }, []);
 
   const mealsFilter = filterReducer === 'All Categories'
