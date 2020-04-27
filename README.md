@@ -39,7 +39,11 @@ A single page application built with react which fetches information about diffe
 
 ### Built With
 
-This project was built with Create-react-app
+- Create-react-app
+- Redux
+- React-Router
+- Webpack
+- Babel
 
 ## Prerequisites
  - Git
