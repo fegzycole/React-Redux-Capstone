@@ -55,7 +55,7 @@ A single page application built with react which fetches information about diffe
 ## Credit
 
 - [Marc Antoine Roy](https://www.behance.net/enfantroy)
-
+- [The MealDB](https://www.themealdb.com/api.php)
 
 ## Screenshots
 
