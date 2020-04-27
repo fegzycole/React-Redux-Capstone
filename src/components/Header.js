@@ -3,7 +3,7 @@ import { withRouter } from 'react-router';
 import MealLogo from '../assets/sphagetti.svg';
 import SearchIcon from '../assets/search.svg';
 import header from '../scss/header.module.scss';
-import helper from '../helpers/index';
+import helper from '../helper/index';
 
 const { showMealsPage } = helper;
 
