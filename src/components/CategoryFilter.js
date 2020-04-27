@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import mealList from '../scss/mealList.module.scss';
 
 const CategoryFilter = ({ categories, changeFilter, filter }) => {
   const handleChange = e => {
@@ -7,7 +8,7 @@ const CategoryFilter = ({ categories, changeFilter, filter }) => {
   };
 
   return (
-    <div className="Beer-list-container">
+    <div className={mealList.mealListContainer}>
       <select onChange={handleChange} value={filter}>
         <option value="All Categories">All Categories</option>
         {categories.map(({ strCategory }) => (
