@@ -8,13 +8,13 @@ import RedirectButton from '../components/RedirectButton';
 import meal from '../scss/meal.module.scss';
 import { showMealsPage } from '../helper/index';
 
-const Beer = props => {
+const Meal = props => {
   const { mealReducer, match } = props;
   const { params: { id } } = match;
 
   const sampleMeal = mealReducer.find(beer => beer.idMeal === id);
 
-  const showBeer = sampleMeal ? (
+  const showMeal = sampleMeal ? (
     <div className={meal.sampleMeal}>
       <div className={meal.mealDescription}>
         <div>
@@ -32,10 +32,10 @@ const Beer = props => {
     <NotFound showMealsPage={() => showMealsPage(props)} />
   );
 
-  return showBeer;
+  return showMeal;
 };
 
-Beer.propTypes = {
+Meal.propTypes = {
   meal: PropTypes.instanceOf(Object).isRequired,
   mealReducer: PropTypes.instanceOf(Array).isRequired,
 };
@@ -46,4 +46,4 @@ const mapStateToProps = ({
   mealReducer,
 });
 
-export default withRouter(connect(mapStateToProps)(Beer));
+export default withRouter(connect(mapStateToProps)(Meal));
