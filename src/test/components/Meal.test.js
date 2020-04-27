@@ -26,8 +26,8 @@ describe('Meal Component', () => {
 
   it('should render without errors', () => {
     const element = findByTestAttribute(component, '.meal');
-    expect(element.length).toBe(1);
-    expect(component.find('img').props().src).toBe(meal.strMealThumb);
-    expect(component.find('h4').text()).toBe(meal.strMeal);
+    expect(element.length).toEqual(1);
+    expect(component.find('img').props().src).toEqual(meal.strMealThumb);
+    expect(component.find('h4').text()).toEqual(meal.strMeal);
   });
 });

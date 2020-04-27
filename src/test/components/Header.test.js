@@ -17,11 +17,11 @@ describe('Header Component', () => {
 
   it('should render without errors', () => {
     const wrapper = findByTestAttribute(component, '.header');
-    expect(wrapper.length).toBe(1);
+    expect(wrapper.length).toEqual(1);
   });
 
   it('should render a logo', () => {
     const logo = findByTestAttribute(component, '.icon');
-    expect(logo.length).toBe(1);
+    expect(logo.length).toEqual(1);
   });
 });

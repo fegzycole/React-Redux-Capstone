@@ -25,7 +25,7 @@ describe('CategoryFilter Component', () => {
   it('should render without errors', () => {
     const wrapper = findByTestAttribute(component, '.mealListContainer');
     const options = findByTestAttribute(component, 'option');
-    expect(wrapper.length).toBe(1);
-    expect(options.length).toBe(4);
+    expect(wrapper.length).toEqual(1);
+    expect(options.length).toEqual(4);
   });
 });

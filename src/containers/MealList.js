@@ -101,13 +101,23 @@ const MealList = ({
 };
 
 MealList.propTypes = {
-  addMeals: PropTypes.func.isRequired,
-  addCategories: PropTypes.func.isRequired,
-  toggleSpinner: PropTypes.func.isRequired,
-  mealReducer: PropTypes.instanceOf(Array).isRequired,
-  categoryReducer: PropTypes.instanceOf(Array).isRequired,
-  spinnerReducer: PropTypes.bool.isRequired,
-  filterReducer: PropTypes.string.isRequired,
+  addMeals: PropTypes.func,
+  addCategories: PropTypes.func,
+  toggleSpinner: PropTypes.func,
+  mealReducer: PropTypes.instanceOf(Array),
+  categoryReducer: PropTypes.instanceOf(Array),
+  spinnerReducer: PropTypes.bool,
+  filterReducer: PropTypes.string,
+};
+
+MealList.defaultProps = {
+  addMeals: () => null,
+  addCategories: () => null,
+  toggleSpinner: () => null,
+  mealReducer: [],
+  categoryReducer: [],
+  spinnerReducer: true,
+  filterReducer: 'All Categories',
 };
 
 const mapDispatchToProps = dispatch => ({

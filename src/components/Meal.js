@@ -29,12 +29,13 @@ const Beer = props => {
 };
 
 Beer.propTypes = {
-  meal: PropTypes.instanceOf(Object).isRequired,
+  meal: PropTypes.instanceOf(Object),
   history: PropTypes.func,
 };
 
 Beer.defaultProps = {
   history: () => null,
+  meal: {},
 };
 
 export default withRouter(Beer);

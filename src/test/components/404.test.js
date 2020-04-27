@@ -23,6 +23,6 @@ describe('CategoryFilter Component', () => {
 
   it('should render without errors', () => {
     const wrapper = findByTestAttribute(component, '.notFound');
-    expect(wrapper.length).toBe(1);
+    expect(wrapper.length).toEqual(1);
   });
 });

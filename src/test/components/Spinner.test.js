@@ -17,6 +17,6 @@ describe('Spinner Component', () => {
 
   it('should render without errors', () => {
     const element = findByTestAttribute(component, '.loading');
-    expect(element.length).toBe(1);
+    expect(element.length).toEqual(1);
   });
 });
