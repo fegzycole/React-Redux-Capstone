@@ -3,9 +3,8 @@ import { withRouter } from 'react-router';
 import MealLogo from '../assets/sphagetti.svg';
 import SearchIcon from '../assets/search.svg';
 import header from '../scss/header.module.scss';
-import helper from '../helper/index';
+import { showMealsPage } from '../helper/index';
 
-const { showMealsPage } = helper;
 
 const Header = props => (
   <header className={header.header}>

@@ -6,9 +6,7 @@ import { withRouter } from 'react-router';
 import NotFound from '../components/404';
 import RedirectButton from '../components/RedirectButton';
 import meal from '../scss/meal.module.scss';
-import helper from '../helper/index';
-
-const { showMealsPage } = helper;
+import { showMealsPage } from '../helper/index';
 
 const Beer = props => {
   const { mealReducer, match } = props;

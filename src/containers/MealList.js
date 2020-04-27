@@ -1,78 +1,29 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import axios from '../axios/index';
 import reduxActions from '../redux/actions/index';
 import Meal from '../components/Meal';
 import Spinner from '../components/Spinner';
 import CategoryFilter from '../components/CategoryFilter';
 import mealList from '../scss/mealList.module.scss';
+import { initialize } from '../helper/index';
 
-const { mealQuery, categoryQuery } = axios;
 
 const {
   addMeals, addCategories, toggleSpinner, changeFilter,
 } = reduxActions;
 
-const MealList = ({
-  addMeals,
-  addCategories,
-  mealReducer,
-  categoryReducer,
-  toggleSpinner,
-  spinnerReducer,
-  filterReducer,
-  changeFilter,
-}) => {
-  const getRandomAlphabet = () => {
-    const alphabets = 'bcefghjklmnprstv'.split('');
-
-    const randomNumber = Math.floor(Math.random() * 16);
-
-    return alphabets[randomNumber];
-  };
-
-  const getMeals = async () => {
-    const randomAlphabet = getRandomAlphabet();
-    try {
-      const {
-        data: { meals },
-      } = await mealQuery.get(`?f=${randomAlphabet}`);
-
-      return meals;
-    } catch (error) {
-      throw new Error(error.message);
-    }
-  };
-
-  const initialize = async () => {
-    try {
-      let meals;
-
-      if (mealReducer.length === 0) {
-        meals = await getMeals();
-      } else {
-        meals = mealReducer;
-      }
-
-      const {
-        data: { categories },
-      } = await categoryQuery.get();
-
-      addCategories(categories);
-
-      addMeals(meals);
-
-      if (spinnerReducer) {
-        toggleSpinner();
-      }
-    } catch (error) {
-      throw new Error(error.message);
-    }
-  };
+const MealList = props => {
+  const {
+    mealReducer,
+    categoryReducer,
+    spinnerReducer,
+    filterReducer,
+    changeFilter,
+  } = props;
 
   useEffect(() => {
-    initialize();
+    initialize(props);
   }, []);
 
   const mealsFilter = filterReducer === 'All Categories'
