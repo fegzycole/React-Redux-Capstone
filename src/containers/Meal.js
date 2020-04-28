@@ -5,6 +5,8 @@ import ReactPlayer from 'react-player';
 import { withRouter } from 'react-router';
 import NotFound from '../components/404';
 import RedirectButton from '../components/RedirectButton';
+import Ingredients from '../components/Ingredients';
+import Instructions from '../components/Instructions';
 import meal from '../scss/meal.module.scss';
 import { showMealsPage } from '../helper/index';
 
@@ -38,20 +40,8 @@ const Meal = props => {
           <ReactPlayer url={sampleMeal.strYoutube} />
         </div>
       </div>
-      <div className={meal.ingredients}>
-        <h5>INGREDIENTS</h5>
-        <ul className={meal.circle}>
-          {mealIngredients.map(ing => <li key={`${ing}-ingredient`}>{ing}</li>)}
-        </ul>
-      </div>
-      <div className={meal.instructions}>
-        <h5>HOW TO PREPARE</h5>
-        <ul>
-          {sampleMeal.strInstructions.split('\r\n').map(instruction => (
-            <li key={`${instruction}-key`}>{instruction}</li>
-          ))}
-        </ul>
-      </div>
+      <Ingredients ingredients={mealIngredients} />
+      <Instructions instructions={sampleMeal.strInstructions} />
       <RedirectButton handleClick={() => showMealsPage(props)} />
     </div>
   ) : (

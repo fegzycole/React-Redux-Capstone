@@ -57,6 +57,7 @@ A single page application built with react which fetches information about diffe
 - [Marc Antoine Roy](https://www.behance.net/enfantroy)
 - [The MealDB](https://www.themealdb.com/api.php)
 - [Css Tricks](https://css-tricks.com/custom-list-number-styling/)
+- [Specky Boy](https://speckyboy.com/html-lists-style/)
 
 ## Screenshots
 
