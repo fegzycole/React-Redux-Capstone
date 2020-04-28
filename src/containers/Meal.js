@@ -12,7 +12,7 @@ const Meal = props => {
   const { mealReducer, match } = props;
   const { params: { id } } = match;
 
-  const sampleMeal = mealReducer.find(beer => beer.idMeal === id);
+  const sampleMeal = mealReducer.find(meal => meal.idMeal === id);
 
   const showMeal = sampleMeal ? (
     <div className={meal.sampleMeal}>

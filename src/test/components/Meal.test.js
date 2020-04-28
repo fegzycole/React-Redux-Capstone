@@ -9,7 +9,7 @@ const meal = {
 };
 
 const setup = (props = {}) => {
-  const component = shallow(<Meal.WrappedComponent meal={props.meal} />);
+  const component = shallow(<Meal.WrappedComponent meal={props.meal} history={props.history} />);
   return component;
 };
 
@@ -19,6 +19,7 @@ describe('Meal Component', () => {
   beforeEach(() => {
     const props = {
       meal,
+      history: {},
     };
 
     component = setup(props);

@@ -24,7 +24,6 @@ const MealList = props => {
 
   useEffect(() => {
     initialize(props);
-    // eslint-disable-next-line
   }, []);
 
   const mealsFilter = filterReducer === 'All Categories'
@@ -73,7 +72,7 @@ MealList.defaultProps = {
 };
 
 const mapDispatchToProps = dispatch => ({
-  addMeals: beers => dispatch(addMeals(beers)),
+  addMeals: meals => dispatch(addMeals(meals)),
   addCategories: categories => dispatch(addCategories(categories)),
   toggleSpinner: () => dispatch(toggleSpinner()),
   changeFilter: filter => dispatch(changeFilter(filter)),

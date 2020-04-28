@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import mealStyles from '../scss/meal.module.scss';
 
-const Beer = props => {
+const Meal = props => {
   const { meal } = props;
 
   const { strMeal, strMealThumb } = meal;
@@ -28,14 +28,9 @@ const Beer = props => {
   );
 };
 
-Beer.propTypes = {
-  meal: PropTypes.instanceOf(Object),
-  history: PropTypes.func,
+Meal.propTypes = {
+  meal: PropTypes.instanceOf(Object).isRequired,
+  history: PropTypes.instanceOf(Object).isRequired,
 };
 
-Beer.defaultProps = {
-  history: () => null,
-  meal: {},
-};
-
-export default withRouter(Beer);
+export default withRouter(Meal);
