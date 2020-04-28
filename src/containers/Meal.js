@@ -10,9 +10,21 @@ import { showMealsPage } from '../helper/index';
 
 const Meal = props => {
   const { mealReducer, match } = props;
-  const { params: { id } } = match;
+  const {
+    params: { id },
+  } = match;
+
+  const mealIngredients = [];
 
   const sampleMeal = mealReducer.find(meal => meal.idMeal === id);
+
+  if (sampleMeal) {
+    const ingredientKeys = Object.keys(sampleMeal).filter(meal => meal.match('strIngredient'));
+
+    ingredientKeys.forEach(ingKey => {
+      if (sampleMeal[ingKey]) mealIngredients.push(sampleMeal[ingKey]);
+    });
+  }
 
   const showMeal = sampleMeal ? (
     <div className={meal.sampleMeal}>
@@ -25,6 +37,20 @@ const Meal = props => {
 
           <ReactPlayer url={sampleMeal.strYoutube} />
         </div>
+      </div>
+      <div className={meal.ingredients}>
+        <h5>INGREDIENTS</h5>
+        <ul className={meal.circle}>
+          {mealIngredients.map(ing => <li key={`${ing}-ingredient`}>{ing}</li>)}
+        </ul>
+      </div>
+      <div className={meal.instructions}>
+        <h5>HOW TO PREPARE</h5>
+        <ul>
+          {sampleMeal.strInstructions.split('\r\n').map(instruction => (
+            <li key={`${instruction}-key`}>{instruction}</li>
+          ))}
+        </ul>
       </div>
       <RedirectButton handleClick={() => showMealsPage(props)} />
     </div>
@@ -44,9 +70,7 @@ Meal.defaultProps = {
   meal: {},
 };
 
-const mapStateToProps = ({
-  mealReducer,
-}) => ({
+const mapStateToProps = ({ mealReducer }) => ({
   mealReducer,
 });
 
