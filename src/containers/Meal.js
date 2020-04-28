@@ -36,8 +36,12 @@ const Meal = props => {
 };
 
 Meal.propTypes = {
-  meal: PropTypes.instanceOf(Object).isRequired,
+  meal: PropTypes.instanceOf(Object),
   mealReducer: PropTypes.instanceOf(Array).isRequired,
+};
+
+Meal.defaultProps = {
+  meal: {},
 };
 
 const mapStateToProps = ({

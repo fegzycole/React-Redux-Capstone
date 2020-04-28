@@ -22,9 +22,11 @@ const MealList = props => {
     changeFilter,
   } = props;
 
-  useEffect(() => {
+  const makeRequest = () => {
     initialize(props);
-  }, []);
+  };
+
+  useEffect(makeRequest, []);
 
   const mealsFilter = filterReducer === 'All Categories'
     ? mealReducer
