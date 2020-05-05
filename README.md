@@ -25,6 +25,9 @@
   * [Prerequisites](#prerequisites)
 * [Credit](#credit)
 * [Screenshots](#screenshots)
+* [Usage](#usage)
+* [Live Version](#live-version)
+* [Testing](#testing)
 * [Roadmap](#roadmap)
 * [License](#license)
 * [Contact](#contact)
@@ -73,7 +76,7 @@ A single page application built with react which fetches information about diffe
 ![screenshot](screenshots/sc4.png)
 
 
-## Getting Started
+## Usage
 
 - git clone https://github.com/fegzycole/React-Redux-Capstone.git
 
@@ -88,8 +91,18 @@ A single page application built with react which fetches information about diffe
 
 - You can view the app [Here](https://react-redux-client.herokuapp.com//)
 
-<!-- ROADMAP -->
-## Roadmap
+## Testing
+
+- git clone https://github.com/fegzycole/React-Redux-Capstone.git
+
+- cd React-Redux-Capstone
+
+- npm install
+
+- npm run test to run the test suites
+
+<!-- FUTURE IMPROVEMENTS -->
+## Future Improvements
 
 See the [open issues](https://github.com/fegzycole/React-Redux-Capstone/issues) for a list of proposed features (and known issues).
 
