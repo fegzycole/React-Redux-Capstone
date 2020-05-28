@@ -37,8 +37,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-A single page application built with react which fetches information about different meal recipes and displays them in a catalogue.
-
+A single page application built with react which fetches information about different meal recipes and displays them in a catalog.
 
 ### Built With
 
